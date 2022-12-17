@@ -1,0 +1,100 @@
+<div class="list-container">
+  <div *ngFor="let item of jobListData" class="item">
+    <a routerLink="/jobs" [queryParams]="{ item: item._id }">
+      <mat-card>
+        <!-- card header -->
+        <div class="header flex-align-center">
+          <div class="flex-align-center">
+            <div class="thumbnail">
+              <a href="#">
+                <img
+                  width="60"
+                  height="60"
+                  [src]="item.companyInfo.logo"
+                  alt=""
+                />
+              </a>
+            </div>
+            <span class="title full-width">
+              <a href="#" class="full-width">
+                <h2 class="item-title">{{ item.title }}</h2>
+              </a>
+            </span>
+          </div>
+          <div>
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Configuration menu"
+              class="menu-btn"
+            >
+              <span>:</span>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <span>Redial</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <!-- card body -->
+        <div class="body">
+          <div class="job-info-list">
+            <ul>
+              <li>
+                <img
+                  width="18"
+                  height="18"
+                  src="./../../../../assets/icons/location.png"
+                />
+                {{ item.companyInfo.companyName }}
+              </li>
+              <li>
+                <img
+                  width="18"
+                  height="18"
+                  src="./../../../../assets/icons/home-2.png"
+                />
+                {{ item.location }}
+              </li>
+              <li>
+                <img
+                  width="18"
+                  height="18"
+                  src="./../../../../assets/icons/document-text.png"
+                />
+                {{ item.contractType }}
+              </li>
+            </ul>
+          </div>
+          <div class="meta-data">
+            <ul class="flex">
+              <li>
+                <img src="./../../../../assets/icons/card.png" alt="" />
+                <span>{{ item.salery }}</span>
+              </li>
+              <!-- <li>
+              <img src="./../../../../assets/icons/timer.png" alt="" />
+              <span> آخر هفته تعطیل </span>
+            </li> -->
+              <li *ngIf="item.SupplementaryInsurance">
+                <img src="./../../../../assets/icons/medal-star.png" alt="" />
+                <span> بیمه تکمیلی </span>
+              </li>
+              <li
+                *ngIf="item.contractType === 'دورکاری' || item.remoteAvailabel"
+              >
+                <img src="./../../../../assets/icons/archive.png" alt="" />
+                <span>امکان دورکاری </span>
+              </li>
+              <li *ngIf="item.degree" matTooltip="مدرک تحصیلی">
+                <img src="./../../../../assets/icons/book-saved.png" alt="" />
+                <span>{{ item.degree }} </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </mat-card>
+    </a>
+  </div>
+</div>

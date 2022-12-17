@@ -1,0 +1,100 @@
+section {
+  padding-right: 20px;
+  position: relative;
+  position: sticky;
+  top: 30px;
+  padding-bottom: 30px;
+
+  mat-card {
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}
+
+.job-detail__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-cta-btn {
+  margin: auto;
+
+  button {
+    width: 180px;
+    margin: 30px 0;
+  }
+}
+
+.header {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 0;
+    margin: 15px 0 5px 0;
+  }
+
+  a {
+    display: inline;
+    width: auto;
+    width: max-content;
+
+    &:hover {
+      opacity: 50%;
+    }
+  }
+
+  .company-name {
+    font-size: 13px;
+    color: #a1abc3;
+  }
+}
+
+.job-metas {
+  height: auto;
+  margin: 10px 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    li {
+      font-size: 12px;
+
+      p,
+      span {
+        display: block;
+        text-align: center;
+      }
+
+      span {
+        color: #a1abc3;
+      }
+    }
+  }
+}
+
+.job-important-metas {
+  margin-top: 20px;
+
+  ul {
+    justify-content: center;
+
+    li {
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 0 8px;
+      font-size: 12px;
+      color: #3f51b5;
+      background-color: #f7f4fe;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.login-wrapper {
+    padding: 30px;
+
+    mat-card-title {
+        margin-bottom: 30px;
+    }
+
+    form {
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}
+
+code-input {
+    --item-border-focused: 1px solid #3f51b5;
+
+    width: 420px;
+    margin-bottom: 30px;
+
+    input {
+        width: 30px;
+        height: 30px;
+    }
+}

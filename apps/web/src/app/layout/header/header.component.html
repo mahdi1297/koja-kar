@@ -1,0 +1,37 @@
+<header class="radius-10 tiny-box-shadow">
+  <div class="inner-header">
+    <div class="flex-space-between">
+      <ul class="flex-align-center header-menu-list">
+        <li>
+          <button mat-flat-button>خانه</button>
+        </li>
+        <li>
+          <button mat-flat-button>آیتم یک</button>
+        </li>
+        <li>
+          <button mat-flat-button>آیتم چهار</button>
+        </li>
+        <li>
+          <button mat-flat-button>آیتم پنجم</button>
+        </li>
+      </ul>
+      <div>
+        <div
+          *ngIf="userData; else no_user_data"
+          class="flex-align-center auth-btn full-height"
+        >
+          <div class="flex-align-center">
+            <img [src]="userData.profileImage" width="40" height="40" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<mat-divider></mat-divider>
+
+<ng-template #no_user_data>
+  <button mat-raised-button color="primary" (click)="openLoginBtn()">
+    ورود
+  </button>
+</ng-template>

@@ -1,0 +1,99 @@
+.list-container {
+  display: block;
+  padding: 10px;
+
+  .item {
+    mat-card {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.header {
+  justify-content: space-between;
+
+  img {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+  .title {
+    display: block;
+
+    a {
+      display: inherit;
+      font-size: 12px;
+      padding-right: 10px;
+    }
+
+    a:hover {
+      color: #ccc;
+    }
+  }
+}
+
+.item-title {
+  font-size: 14px;
+  // font-size: $font-sub-title;
+}
+
+.body {
+  .job-info-list {
+    ul {
+      margin-top: 10px;
+    }
+
+    width: 100%;
+
+    li {
+      font-size: 13px;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      padding: 3px 0;
+
+      img {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .meta-data {
+    margin-top: 15px;
+
+    ul {
+      flex-wrap: wrap;
+
+      li {
+        display: inherit;
+        align-items: center;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size: 13px;
+        padding: 3px 5px;
+        background: #f3f2f1;
+
+        span {
+          margin-right: 5px;
+        }
+      }
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  font-size: 28px;
+
+  span {
+    position: relative;
+    bottom: 8px;
+  }
+}

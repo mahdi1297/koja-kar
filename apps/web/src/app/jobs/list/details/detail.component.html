@@ -1,0 +1,79 @@
+<section>
+  <mat-card>
+    <div *ngIf="!isLoading; else loader">
+      <div *ngIf="job; else error_loading">
+        <div class="job-detail__container">
+          <!-- header-start -->
+          <div class="header">
+            <a href="#">
+              <img width="85" src="{{ job.companyInfo.logo }}" alt="" />
+            </a>
+            <h2>{{ job.title }}</h2>
+            <a href="#">
+              <span class="company-name">
+                {{ job.companyInfo.companyName }}
+              </span>
+            </a>
+          </div>
+          <!-- header-end -->
+          <!-- job-important-metas-start -->
+          <div class="job-important-metas">
+            <ul class="flex-align-center">
+              <li>تمام وقت</li>
+              <li>I T</li>
+              <li>ارشد</li>
+            </ul>
+          </div>
+          <!-- job-important-metas-end -->
+          <!-- send-resume-start -->
+          <div class="resume-cta-btn">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="sendResumeBottomSheet()"
+            >
+              ارسال رزومه
+            </button>
+          </div>
+          <!-- send-resume-end -->
+          <div class="job-metas full-width">
+            <ul>
+              <li>
+                <span>موقعیت مکانی</span>
+                <p>{{ job.location }}</p>
+              </li>
+              <li>
+                <span>نوع همکاری</span>
+                <p>{{ job.contractType }}</p>
+              </li>
+              <li>
+                <span>حقوق</span>
+                <p>{{ job.salery }}</p>
+              </li>
+              <li>
+                <span>جنیست</span>
+                <p>{{ job.gender }}</p>
+              </li>
+            </ul>
+          </div>
+          <!-- body-start -->
+          <div class="body">
+            <mat-tab-group dynamicHeight>
+              <mat-tab label="درباره شغل">
+                <h3>شرح موقعیت شغلی</h3>
+                <div [innerHtml]="job.content | safeHtml"></div>
+              </mat-tab>
+              <mat-tab label="درباره شرکت"> Content 2 </mat-tab>
+            </mat-tab-group>
+          </div>
+          <!-- body-end -->
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</section>
+
+<ng-template #loader>
+  <dev-shared-skeleton-loader></dev-shared-skeleton-loader>
+</ng-template>
+<ng-template #error_loading>Something wrong happened</ng-template>

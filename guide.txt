@@ -1,0 +1,87 @@
+run express app = npx nx run api:serve
+graph = npx nx dep
+creaet new lib = npx nx g @nrwl/workspace:lib libName
+
+
+
+
+
+{
+"name": "koja-kar",
+  "componyInfo": {
+    "companySize": 10,
+    "coverImage": "https://d2q79iu7y748jz.cloudfront.net/s/_headerimage/980x200/dd10087894285903715b89f7b824252d",
+    "logo": "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/64x64/88813b3f866a5b58c9685073e3b87e05",
+    "ceo": "me",
+    "industry": "technology-it",
+    "companyType": ["technlogy", "api"]
+  }
+}
+
+
+{
+ "title": "توسعه دهنده Front end",
+  "companyInfo": {
+    "companyName": "koja-kar",
+    "companyId": "6353b54c400e681db7f142b0",
+    "logo": "Seomthing logo",
+    "companyWebsite": "www.koja-kar.ir",
+    "companySize": 5,
+    "companyDescription": "این یک توضیح تستی است"
+  },
+  "category": "frontend",
+  "jobType": "something",
+  "experience": "از 3 تا 6 سال",
+  "location": "قم",
+  "gender": "مرد",
+  "militaryServiceStatus": "مهم نیست",
+  "degree": "مهم نیست",
+  "abilities": ["react.js", "javascript", "testing"],
+  "content": "سلام این صرفا یک تست است",
+  "isFinishedTime": false,
+  "isBanned": false,
+  "isActive": true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="mat-display-4">This is level 4</div>
+  <div class="mat-display-3">This is level 3</div>
+  <div class="mat-display-2">This is level 2</div>
+  <div class="mat-display-1">This is level 1</div>
+
+  <mat-divider></mat-divider>
+  <mat-icon color="primary">grade </mat-icon>
+  <mat-divider></mat-divider>
+
+  <div class="mat-headline">This is level 4</div>
+  <div class="mat-title">This is level 3</div>
+  <div class="mat-body-1">This is level 2</div>
+  <div class="mat-body-2">This is level 21</div>
+  <div class="mat-caption">This is level 1</div>
+
+
+
+
+
+
+
+
+
+
+https://www.figma.com/file/UdsoEjHdbmYPfJ1es8F9xm/Iconicool-%7C-Free-Iconset-(Community)?node-id=3%3A251

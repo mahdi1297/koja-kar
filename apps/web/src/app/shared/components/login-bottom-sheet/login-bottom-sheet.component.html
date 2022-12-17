@@ -1,0 +1,37 @@
+<div class="login-wrapper">
+  <div *ngIf="!isPasswordField">
+    <mat-card-title>ورود به برنامه</mat-card-title>
+    <br />
+    <br />
+    <form [formGroup]="mobileForm" (ngSubmit)="sendMessage()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>شماره موبایل</mat-label>
+          <input matInput formControlName="mobile" placeholder="09199784100" />
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-raised-button color="primary" class="btn-block">
+        <span *ngIf="isLoading"> Loading... </span>
+        <span *ngIf="!isLoading"> ورود به برنامه </span>
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="isPasswordField">
+    <mat-card-title>وارد کردن کد</mat-card-title>
+
+    <br />
+    <br />
+    <div>
+      <mat-card-content>
+        <code-input
+          [codeLength]="6"
+          [initialFocusField]="0"
+          (codeCompleted)="onCodeCompleted($event)"
+          #codeInput
+        >
+        </code-input>
+      </mat-card-content>
+    </div>
+  </div>
+</div>
