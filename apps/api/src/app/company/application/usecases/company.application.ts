@@ -4,9 +4,11 @@ import { errorGenerator } from './../../../../helper/error-generator';
 import { ResponseStatusCode } from './../../../../types';
 import { CompanyService } from '../../service/company.service';
 import { CompnayContracts } from '../contracts/company.contracts';
+import { passworHasher } from 'apps/api/src/helper';
 
 export class CompanyApplication implements CompnayContracts {
   private _service: CompanyService;
+
   constructor() {
     this._service = new CompanyService();
   }
@@ -26,10 +28,8 @@ export class CompanyApplication implements CompnayContracts {
     return result;
   }
 
-  async create(data: Company): Promise<any> {
-    const { name } = data;
-
-    const existsCompany = await this._service.existsName(name);
+  async register(email: string, pass: string): Promise<any> {
+    const existsCompany = await this._service.getByEmail(email);
 
     if (existsCompany) {
       const errorBody = errorGenerator({
@@ -40,7 +40,10 @@ export class CompanyApplication implements CompnayContracts {
       return errorBody;
     }
 
-    const result = await this._service.create(data);
+    const password = await passworHasher(pass);
+
+    const result = await this._service.create(email, password);
+
     if (!result) {
       const errorBody = errorGenerator({
         error: true,

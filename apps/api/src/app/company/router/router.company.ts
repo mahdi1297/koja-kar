@@ -13,7 +13,7 @@ export class CompanyRouter {
   get routes_v1() {
     this._router
       .get('/list', this._controller.list)
-      .post('/', this._controller.create)
+      .post('/register', this._controller.register)
       .put('/', this._controller.update)
       .delete('/', this._controller.remove)
       .post('/:_id/refactor', this._controller.refactor);

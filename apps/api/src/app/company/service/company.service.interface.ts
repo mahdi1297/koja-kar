@@ -2,7 +2,7 @@ import { Company } from '@dev/domain';
 
 export interface ICompany {
   getList(): Promise<Company[]>;
-  create(data: Company): Promise<Company>;
+  create(email: string, password: string): Promise<Company>;
   getByName(name: string): Promise<Company>;
   getById(_id: string): Promise<Company>;
   existsName(name: string): Promise<boolean>;
@@ -10,4 +10,5 @@ export interface ICompany {
   update(_id: string, data: Partial<Company>): Promise<Partial<Company>>;
   remove(_id: string): Promise<string>;
   refactor(_id: string): Promise<string>;
+  getByEmail(email: string): Promise<boolean>;
 }

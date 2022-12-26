@@ -27,10 +27,10 @@ export class CompanyController extends BaseController {
     });
   }
 
-  async create(req: Request, res: Response) {
-    const data = req.body;
+  async register(req: Request, res: Response) {
+    const { email, password } = req.body;
 
-    const result = await _app.create(data);
+    const result = await _app.register(email, password);
 
     if (result.error) {
       return res.status(result.status).json({
@@ -41,8 +41,8 @@ export class CompanyController extends BaseController {
       });
     }
 
-    super.Ok({
-      res,
+    res.status(200).json({
+      result,
       data: result,
       message: ResponseMessage.OK,
     });
@@ -50,7 +50,6 @@ export class CompanyController extends BaseController {
 
   async update(req: Request, res: Response) {
     const data = req.body;
-
     const { _id } = data;
 
     const result = await _app.update(_id, data);

@@ -23,8 +23,11 @@ export class CompanyService implements ICompany {
     return await this._context.exists({ name });
   }
 
-  async create(data: Company): Promise<Company> {
-    return await this._context.create(data);
+  async create(email: any, password: any): Promise<Company> {
+    return await this._context.create({
+      'companyInfo.email': email,
+      password,
+    });
   }
 
   async getByName(name: string): Promise<Company> {
@@ -33,6 +36,10 @@ export class CompanyService implements ICompany {
 
   async getById(_id: string): Promise<Company> {
     return await this._context.findOne({ _id });
+  }
+
+  async getByEmail(email: string): Promise<boolean> {
+    return await this._context.exists({ 'companyInfo.email': email });
   }
 
   async update(_id: string, data: any): Promise<Partial<Company>> {

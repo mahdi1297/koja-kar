@@ -6,6 +6,10 @@ export function passworHasher(passText: string) {
   });
 }
 
+export const hashPassowrd = async (pass: string) => {
+  return await bcrypt.hashSync(pass, 10);
+};
+
 // Compares dbPassword that is stored in db whit plainPassword
 export function comparePasswords(dbPassword: string, plainPassword) {
   return new Promise((resolve, reject) => {
