@@ -1,0 +1,35 @@
+.signup_wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left top, #1a64d32a, #fff, #fff, #eee);
+    background: url(https://aid-frontend.prod.atl-paas.net/atlassian-id/front-end/5.0.398/static/media/jira-left.d0ab0e98.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    background-size: 368px, 368px;
+    background-position: left bottom, right bottom;
+
+
+    h1 {
+        font-size: 20px;
+        color: $color-primary;
+        margin-bottom: 30px;
+        border-radius: 5px;
+    }
+
+    .signup-card {
+        width: 350px;
+        height: auto;
+        background: $color-white;
+        box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px;
+        padding: 30px 0;
+
+        button {
+            margin-top: 30px;
+        }
+
+    }
+}

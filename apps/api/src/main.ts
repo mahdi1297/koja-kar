@@ -23,12 +23,12 @@ if (environment.production) {
   app.use(morgan('tiny'));
 }
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(new Bootstrap().baseRoutes);

@@ -18,6 +18,8 @@
     "baseUrl": ".",
     "paths": {
       "@dev/domain": ["libs/domain/src/index.ts"],
+      "@dev/form": ["libs/form/src/index.ts"],
+      "@dev/theme": ["libs/theme/src/index.ts"],
       "@dev/types": ["libs/types/src/index.ts"]
     }
   },
